@@ -110,7 +110,7 @@ d_impute$weekday = as.factor(d_impute$weekday)
 
 # summrise
 d_impute_g = group_by(d_impute,weekday,interval)
-s=summarise(d_impute_g,numberofsteps=sum(steps))
+s=summarise(d_impute_g,numberofsteps=mean(steps))
 ```
 
 ```{r message=FALSE,warning=FALSE}
