@@ -49,7 +49,7 @@ mean is **9354.2295082** and median is **10395**
 ```r
 d_g=group_by(d,interval)
 avg_steps=summarise(d_g,avg=mean(steps,na.rm=T))
-plot(avg_steps$interval,avg_steps$avg,type="l")
+plot(avg_steps$interval,avg_steps$avg,type="l",main = "Time series plot of the average number of steps taken")
 abline(v=avg_steps[which.max(avg_steps$avg),1])
 ```
 
@@ -91,7 +91,7 @@ for(i in 1:nrow(d_impute))
 ```r
 d_impute_g=group_by(d_impute,date)
 s_impute=summarise(d_impute_g,total_steps=sum(steps,na.rm = T))
-hist(s_impute$total_steps,main = "Histogram of the total number of steps taken each day",
+hist(s_impute$total_steps,main = "Histogram of the total number of steps taken each day after missing values are imputed",
      xlab = "total number of steps every day")
 ```
 
@@ -104,7 +104,8 @@ median_impute=median(s_impute$total_steps)
 the mean and median total number of steps taken per day is **10766** and **10766**. the impact of imputing missing data on the estimates of the total daily number of steps is that the Frequency of 0-5000 steps become much less. 
 
 
-## 8.Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends
+## 8.Panel plot comparing the average number of steps taken per 5-minute 
+interval across weekdays and weekends
 
 ```r
 # install 'chron' to call 'is.weekend'
@@ -147,7 +148,8 @@ if (require("lattice")==FALSE){
 plot
 
 ```r
-xyplot(numberofsteps ~ interval | weekday,data = s, layout = c(1,2),type="l")
+xyplot(numberofsteps ~ interval | weekday,data = s, layout = c(1,2),type="l",
+       main='comparing the average number of steps taken per 5-minute interval across weekdays and weekends')
 ```
 
 ![plot of chunk lattice xyplot](figure/lattice xyplot-1.png)
