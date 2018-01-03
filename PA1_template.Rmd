@@ -3,10 +3,10 @@
 ---
 title: "PA1_template"
 author: "may"
-date: "2017年12月31日"
+date: "2017-12-31"
 output: html_document
 editor_options: 
-  chunk_output_type: console
+chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -27,7 +27,7 @@ if (require("dplyr")==FALSE){
 }
 ```
 
-```{r Histogram of the total number of steps taken each day}
+```{r Histogram_of_the_total_number_of_steps_taken_each_day}
 
 d_g=group_by(d,date)
 s=summarise(d_g,total_steps=sum(steps,na.rm = T))
@@ -43,7 +43,7 @@ median=median(s$total_steps)
 mean is **`r mean`** and median is **`r median`**
 
 ## 4.Time series plot of the average number of steps taken
-```{r Time series plot of the average number of steps taken}
+```{r Time_series_plot_of_the_average_number_of_steps_taken}
 d_g=group_by(d,interval)
 avg_steps=summarise(d_g,avg=mean(steps,na.rm=T))
 plot(avg_steps$interval,avg_steps$avg,type="l",main = "Time series plot of the average number of steps taken")
@@ -126,7 +126,7 @@ if (require("lattice")==FALSE){
 ```
 
 plot
-```{r lattice xyplot}
+```{r lattice_xyplot}
 xyplot(numberofsteps ~ interval | weekday,data = s, layout = c(1,2),type="l",
        main='comparing the average number of steps taken per 5-minute interval across weekdays and weekends')
 ```
