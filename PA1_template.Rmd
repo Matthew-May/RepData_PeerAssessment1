@@ -1,5 +1,5 @@
 
-```{r }
+
 ---
 title: "PA1_template"
 author: "may"
@@ -128,5 +128,5 @@ plot
 ```{r lattice xyplot}
 xyplot(numberofsteps ~ interval | weekday,data = s, layout = c(1,2),type="l")
 ```
-```
+
 

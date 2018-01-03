@@ -1,19 +1,14 @@
 
 
-```r
 ---
 title: "PA1_template"
 author: "may"
-date: "2017å¹‘ù<U+3E34>12æœ<U+383C><U+3E38>31æ—õ<U+3E35>"
+date: "2017å¹´12æœˆ31æ—¥"
 output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-```
 
-```
-## Error: invalid multibyte character in parser at line 4
-```
 
 
 ## 1.Code for reading in the dataset and/or processing the data
@@ -156,5 +151,5 @@ xyplot(numberofsteps ~ interval | weekday,data = s, layout = c(1,2),type="l")
 ```
 
 ![plot of chunk lattice xyplot](figure/lattice xyplot-1.png)
-```
+
 
